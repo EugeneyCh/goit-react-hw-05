@@ -1,7 +1,7 @@
 // import s from "./App.module.css";
-import HomePage from "./pages/HomePage";
-import MoviesPage from "./pages/MoviesPage";
-import NotFoundPage from "./pages/NotFoundPage";
+import HomePage from "./pages";
+import MoviesPage from "./pages";
+import NotFoundPage from "./pages";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
