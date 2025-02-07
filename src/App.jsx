@@ -1,12 +1,14 @@
 // import s from "./App.module.css";
-import HomePage from "./pages";
-import MoviesPage from "./pages";
-import NotFoundPage from "./pages";
+import Header from "./components/Header/Header";
+import HomePage from "./pages/HomePage";
+import MoviesPage from "./pages/MoviesPage";
+import NotFoundPage from "./pages/NotFoundPage";
 import { Route, Routes } from "react-router-dom";
 
 const App = () => {
   return (
     <main>
+      <Header />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/movies" element={<MoviesPage />} />
