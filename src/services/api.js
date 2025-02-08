@@ -18,12 +18,52 @@ export const fetchMovies = async () => {
       "/trending/movie/day?language=en-US",
       options
     );
-    return data.results; // Використовуємо 'results', а не 'movies'
+    return data.results;
   } catch (error) {
     console.error("Error fetching movies:", error);
     return [];
   }
 };
+
+export const fetchMoviesDetails = async (movieId) => {
+  try {
+    const { data } = await axios.get(
+      `/movie/${movieId}?language=en-US`,
+      options
+    );
+    return data;
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return [];
+  }
+};
+
+export const fetchMovieCast = async (movieId) => {
+  try {
+    const { data } = await axios.get(
+      `/movie/${movieId}/credits?language=en-US`,
+      options
+    );
+    return data.cast;
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return [];
+  }
+};
+
+export const fetchMovieReviews = async (movieId) => {
+  try {
+    const { data } = await axios.get(
+      `/movie/${movieId}/reviews?language=en-US`,
+      options
+    );
+    return data.results;
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return [];
+  }
+};
+
 // axios
 //   .get(url, options)
 //   .then((response) => console.log(response))

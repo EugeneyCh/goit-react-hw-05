@@ -1,0 +1,15 @@
+.genresList {
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+}
+
+.movieAbout {
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+}
+
+.titleImage {
+    width: 280px;
+}
