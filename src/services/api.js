@@ -24,6 +24,18 @@ export const fetchMovies = async () => {
     return [];
   }
 };
+export const fetchSearchMovies = async (movieName) => {
+  try {
+    const { data } = await axios.get(
+      `/search/movie?query=${movieName}&language=en-US`,
+      options
+    );
+    return data;
+  } catch (error) {
+    console.error("Error fetching movies:", error);
+    return [];
+  }
+};
 
 export const fetchMoviesDetails = async (movieId) => {
   try {

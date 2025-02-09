@@ -25,8 +25,7 @@ const MovieReviews = () => {
       setIsLoading(false);
     } finally {
     }
-  }, []);
-  // console.log(movieReviews);
+  }, [movieId]);
 
   if (isError) {
     return "Error while loading reviews information...";

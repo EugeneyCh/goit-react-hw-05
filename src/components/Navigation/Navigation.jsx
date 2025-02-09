@@ -1,4 +1,6 @@
+import clsx from "clsx";
 import { NavLink } from "react-router-dom";
+import s from "./Navigation.module.css";
 
 const buildLinkClass = ({ isActive }) => {
   return clsx(s.link, isActive && s.active);
@@ -11,7 +13,7 @@ function Navigation() {
         Home
       </NavLink>
       <NavLink className={buildLinkClass} to="/movies">
-        ovies
+        Movies
       </NavLink>
     </nav>
   );

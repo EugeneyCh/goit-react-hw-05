@@ -1,8 +1,9 @@
 import { useEffect, useState } from "react";
-import { fetchMovies } from "../services/api";
-import MovieList from "../components/MovieList/MovieList";
-import Loader from "../components/Loader/Loader";
+import { fetchMovies } from "../../services/api";
+import MovieList from "../../components/MovieList/MovieList";
+import Loader from "../../components/Loader/Loader";
 import { useLocation } from "react-router-dom";
+import s from "./HomePage.module.css";
 
 const HomePage = () => {
   const [isLoading, setIsLoading] = useState(false);
@@ -38,7 +39,8 @@ const HomePage = () => {
 
   return (
     <>
-      <MovieList movies={movies} state={{ from: location }} />
+      <h1 className={s.title}>Trending today</h1>
+      <MovieList movies={movies} />
     </>
   );
 };

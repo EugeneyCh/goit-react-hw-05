@@ -6,9 +6,9 @@ import {
   useNavigate,
   useParams,
 } from "react-router-dom";
-import { fetchMoviesDetails } from "../services/api";
+import { fetchMoviesDetails } from "../../services/api";
 import s from "./MovieDetailsPage.module.css";
-import Loader from "../components/Loader/Loader";
+import Loader from "../../components/Loader/Loader";
 
 const url = "https://image.tmdb.org/t/p/w500";
 
@@ -48,7 +48,7 @@ const MovieDetailsPage = () => {
 
   return (
     <>
-      <button onClick={goBackHandler}>Go back</button>
+      <Link to={backLinkLocationRef.current}>Go back</Link>
       <div className={s.movieAbout}>
         <div>
           <img

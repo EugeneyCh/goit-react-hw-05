@@ -10,6 +10,8 @@ const MovieCast = () => {
   const [isError, setIsError] = useState(false);
 
   const { movieId } = useParams();
+  const defaultImg =
+    "https://dummyimage.com/400x600/cdcdcd/000.jpg&text=No+poster";
 
   useEffect(() => {
     setIsLoading(true);
@@ -27,7 +29,7 @@ const MovieCast = () => {
     } finally {
       setIsLoading(false);
     }
-  }, []);
+  }, [movieId]);
 
   if (isError) {
     return "Error while loading casting information...";
@@ -36,8 +38,6 @@ const MovieCast = () => {
   if (isLoading) {
     return <Loader />;
   }
-
-  console.log(loadedActors, movieId);
 
   return (
     <>
@@ -50,16 +50,20 @@ const MovieCast = () => {
               return (
                 <li key={`${id}`}>
                   <img
-                    src={`https://image.tmdb.org/t/p/w500/${profile_path}`}
+                    src={
+                      profile_path
+                        ? `https://image.tmdb.org/t/p/w500/${profile_path}`
+                        : defaultImg
+                    }
                     alt={`${name}`}
                     className={s.actorsImg}
-                  ></img>
+                  />
                   <p>{`${name}`}</p>
                   <p>Chapter: {`${character}`}</p>
                 </li>
               );
             }
-            return null; // Додано повернення null, якщо у актора немає profile_path
+            return null;
           })}
         </ul>
       </div>
