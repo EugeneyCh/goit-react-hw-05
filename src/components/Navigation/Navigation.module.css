@@ -1,11 +1,15 @@
+.nav {
+    display: flex;
+    justify-content: start;
+    width: 100%;
+    gap: 20px;
+    padding: 20px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
 .link {
     font-size: 26px;
     text-decoration: none;
-}
-
-.nav {
-    display: flex;
-    gap: 20px;
 }
 
 .active {

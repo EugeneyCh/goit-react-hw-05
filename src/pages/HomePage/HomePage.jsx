@@ -40,6 +40,7 @@ const HomePage = () => {
   return (
     <>
       <h1 className={s.title}>Trending today</h1>
+      {isLoading && <Loader />}
       <MovieList movies={movies} />
     </>
   );

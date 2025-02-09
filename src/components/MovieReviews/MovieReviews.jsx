@@ -43,7 +43,7 @@ const MovieReviews = () => {
       <ul className={s.reviewsNotes}>
         {movieReviews.map(({ id, author, content }) => {
           return (
-            <li style={{ margin: "5px 0 0 10px" }} key={`${id}`}>
+            <li className={s.reviewBox} key={`${id}`}>
               <h3> {author}</h3>
               <p>{content}</p>
             </li>

@@ -43,12 +43,14 @@ const MovieDetailsPage = () => {
   }, [movieId]);
 
   if (!movie) {
-    return <h2>Loading...</h2>;
+    return <Loader />;
   }
 
   return (
     <>
-      <Link to={backLinkLocationRef.current}>Go back</Link>
+      <Link to={backLinkLocationRef.current} className={s.link}>
+        Go back
+      </Link>
       <div className={s.movieAbout}>
         <div>
           <img

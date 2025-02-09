@@ -3,6 +3,7 @@ import { useSearchParams, useLocation } from "react-router-dom";
 import { fetchSearchMovies } from "../../services/api";
 import Loader from "../../components/Loader/Loader";
 import MovieList from "../../components/MovieList/MovieList";
+import s from "./MoviesPage.module.css";
 
 function MoviesPage() {
   const [searchName, setSearchName] = useState("");
@@ -55,9 +56,9 @@ function MoviesPage() {
   }
   return (
     <>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className={s.searchBox}>
         <input
-          style={{ marginLeft: "25px" }}
+          className={s.search}
           type="text"
           name="movieName"
           value={searchName}

@@ -1,0 +1,8 @@
+.reviewsNotes {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviewBox {
+    margin: 5px 0 0 10px
+}
